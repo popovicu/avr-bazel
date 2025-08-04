@@ -15,3 +15,15 @@ run_avr -m atmega328p -f 16000000 bazel-bin/software/software
 ```
 
 `run_avr` is from the `simavr` project that can be found [here](https://github.com/buserror/simavr). This is an awesome project. :)
+
+The output should be something like this:
+
+```
+Loaded 230 bytes of Flash data at 0
+Loaded 28 bytes of Flash data at 0xe6
+Hello World!..
+Thank you!..
+^Csignal caught, simavr terminating
+```
+
+*It seems like `simavr` adds these `..` outputs for `\r\n`.*
