@@ -4,6 +4,14 @@ This is a small example for using Bazel to build an embedded C binary for an AVR
 
 **This repo is meant to accompany the article at TODO**
 
+## Building
+
+```
+bazel build --platforms=//platform:avr_atmega_bare_metal //software
+```
+
+The `platforms` flag is necessary to make Bazel use the correct C toolchain.
+
 ## Hermeticity
 
 The rules are not fully hermetic and they assume that your GCC tools for AVR are at `/home/uros/build/avr/sysroot` (this is just how it was defined on my machine). This path is hardcoded for simplicity. Edit the file in `toolchain/BUILD` for your own paths.
